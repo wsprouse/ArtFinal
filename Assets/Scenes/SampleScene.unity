@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 31670184}
   - component: {fileID: 31670183}
   - component: {fileID: 31670182}
+  - component: {fileID: 31670186}
+  - component: {fileID: 31670187}
   m_Layer: 0
   m_Name: Robot Player
   m_TagString: Player
@@ -188,7 +190,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &31670184
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -256,6 +258,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &31670186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31670181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82935661532ee9449be2da6ebaf39214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 31670187}
+  spriteRenderer: {fileID: 31670184}
+  rb: {fileID: 31670183}
+  jumpForce: 7
+  speed: 10
+--- !u!95 &31670187
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31670181}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c99c40de1c9d8e042ae10bf4db3e7cec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +491,7 @@ GameObject:
   - component: {fileID: 1898530554}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1440,16 +1479,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 12, y: 1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 15
-      m_TileSpriteIndex: 15
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 13, y: 1, z: 0}
     second:
       serializedVersion: 2
@@ -1892,7 +1921,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 6b9cb9f48e07af142b91a18ec305d01e, type: 2}
   - m_RefCount: 9
     m_Data: {fileID: 11400000, guid: 0440547677396044a8bbc071feed9eb8, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 9c04d4e9b263de3468d8e363a662d706, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 23
@@ -1925,10 +1954,10 @@ Tilemap:
     m_Data: {fileID: -588296364, guid: 185ea2a6d8d89494d81808d455616694, type: 3}
   - m_RefCount: 9
     m_Data: {fileID: 962319774, guid: 185ea2a6d8d89494d81808d455616694, type: 3}
-  - m_RefCount: 2
+  - m_RefCount: 1
     m_Data: {fileID: 375583564, guid: 185ea2a6d8d89494d81808d455616694, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 133
+  - m_RefCount: 132
     m_Data:
       e00: 1
       e01: 0
@@ -1949,7 +1978,7 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
-  - m_RefCount: 133
+  - m_RefCount: 132
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
